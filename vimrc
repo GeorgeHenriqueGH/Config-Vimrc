@@ -5,7 +5,8 @@
 "Formatação de texto 
 
 set nocompatible
-filetype indent on
+set encoding=utf-8 
+set fileencoding=utf-8  
 set number
 set nowrap
 set nolinebreak
@@ -28,10 +29,21 @@ set nobackup
 set noswapfile
 set nowritebackup
 
-"[================================##==================================]
+"[==============================##=====================================]
 
-"Hora da brincadeira com cores
+"Plugs
 
+call plug#begin('~/.vim/plugged')
+Plug 'shapeoflambda/dark-purple.vim'
+Plug 'scrooloose/nerdtree' 
+Plug 'jiangmiao/auto-pairs'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'jelera/vim-javascript-syntax'
+call plug#end()
+
+filetype plugin indent on
 syntax enable
-syntax on
-colorscheme slate
+autocmd vimenter * NERDTree
+colorscheme dark_purple
+
+"[=============================##====================================]
