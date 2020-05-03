@@ -1,49 +1,93 @@
-"Minha configuração do .vimrc lembrando que eu irei, configurar para meu gosto '.'
+"                Minhas Configs Para O Vim
 
-"[====================================##============================]
+"author: George Henrique <georgehenriquecampos@gmail.com>
+"license:  GPLv3
 
-"Formatação de texto 
+"[==========================##=======================]
+
+"                   Configs Do Editor
+
+"[==========================##=======================]
+
+set number "Numera As Linhas Do Arquivo
+
+set tabstop=4 "Tabulação Do Texto
+set shiftwidth=4
+set expandtab
+
+set autoindent "Indentação Automatica
+set smartindent
+
+set encoding=UTF-8 "Acentua Os Caracteres
+
+set wildmenu "Menu Melhorado
+
+set incsearch "Busca Melhorada
+set hlsearch
+set ignorecase 
+set smartcase 
+
+syntax enable "Habilita O Destaque De Sintaxe
+set showmatch
+
+set nobackup nowritebackup "Sem Backup
+
+"[==========================##=======================]
+
+"                    Plugins - Vim
+
+"[==========================##=======================]
 
 set nocompatible
-set encoding=utf-8 
-set fileencoding=utf-8  
-set number
-set nowrap
-set nolinebreak
-set sm
-set noai
-set shiftwidth=4
-set tabstop=4
+filetype off
 
-"[==================================##===============================]
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim' "Gerenciador De Plugins 
+Plugin 'sheerun/vim-polyglot' "Syntax Moderna
 
-"Turbinando a busca
+Plugin 'ryanoasis/vim-devicons' "Icones
 
-set is hls ic scs 
+Plugin 'scrooloose/nerdtree' "Arvore De Arquivos
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' "Icones Da Arvore De Arquivos
 
-"[=================================##=================================]
+Plugin 'jiangmiao/auto-pairs' "AutoComplete De Pares
 
-"Desabilitando backup
+Plugin 'vim-airline/vim-airline' "Linha De Status
+Plugin 'vim-airline/vim-airline-themes'
 
-set nobackup
-set noswapfile
-set nowritebackup
+Plugin 'nanotech/jellybeans.vim' "Tema De Cores
 
-"[==============================##=====================================]
-
-"Plugs
-
-call plug#begin('~/.vim/plugged')
-Plug 'shapeoflambda/dark-purple.vim'
-Plug 'scrooloose/nerdtree' 
-Plug 'jiangmiao/auto-pairs'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'jelera/vim-javascript-syntax'
-call plug#end()
-
+Plugin 'ervandew/supertab' "Auto-Complete Vim
+call vundle#end()
 filetype plugin indent on
-syntax enable
-autocmd vimenter * NERDTree
-colorscheme dark_purple
 
-"[=============================##====================================]
+"[==========================##=======================]
+
+"             Configurações Dos Plugins
+
+"[==========================##=======================]
+
+"Cores
+
+set background=dark "Cores Do Layout   
+colorscheme jellybeans
+let g:airline_theme='jellybeans'
+
+"Config NerdTree
+
+autocmd VimEnter * NERDTree "Abre Arvore De Arquivos
+autocmd VimEnter * wincmd p
+
+let g:NERDTreeWinPos = "left" "Configura O Tamanho
+let NERDTreeShowHidden=0
+let g:NERDTreeWinSize=25
+
+let g:NERDTreeFileExtensionHighlightFullName = 1 "Configura Os Icones
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+"Auto-Complete
+
+let g:SuperTabDefaultCompletionType = "<c-n>" "Define Caixa
+"[==========================##=======================]
