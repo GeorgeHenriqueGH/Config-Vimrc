@@ -1,2 +1,9 @@
 # Minha-Configuração-Do-Vimrc-
-Configuração do vim editor de textos para o dia a dia
+
+### Configuração do editor de textos, Vim.
+
+- [x] Nova Config
+- [x] Mais Produtivo
+- [] Melhor AutoComplete
+
+![](print.png)
