@@ -15,6 +15,8 @@ set tabstop=4 "Tabulação Do Texto
 set shiftwidth=4
 set expandtab
 
+set nowrap "Quebra De Linha
+
 set autoindent "Indentação Automatica
 set smartindent
 
